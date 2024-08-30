@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events - Skill Spark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @layer utilities {
+            .bg-custom-blue {
+                background-color: #dfeafc;
+            }
+            .text-orange {
+                color: #e36000;
+            }
+            .bg-orange {
+                background-color: #e36000;
+            }
+            .bg-blue {
+                background-color: #0d4e84;
+            }
+            .hover-shadow-lg:hover {
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            }
+            .card-rounded {
+                border-radius: 25px;
+            }
+            .card {
+                min-height: 400px;
+                max-width: 350px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body class="bg-custom-blue">
+
+    <div class="text-center py-12">
+        <h1 class="text-4xl font-bold text-blue">Upcoming Events</h1>
+    </div>
+
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+        <!-- Event Card 1 -->
+        <div class="bg-blue text-white rounded-lg shadow-lg p-6 hover-shadow-lg card-rounded transition duration-300 transform hover:-translate-y-1 card">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">Free 2 Days Digital Marketing Workshop</h2>
+                <p class="text-lg">November 25 and 26</p>
+                <p class="text-lg">Physical 20 Seats | Online 100 Seats</p>
+                <p class="text-lg mt-4">Trainer:</p>
+                <p class="text-lg">Ram Udgar Yadav (10+ Years of Digital Marketing Experience)</p>
+                <p class="text-lg mt-4">Time:</p>
+                <p class="text-lg">5:00 pm – 7:00 pm</p>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="#" class="bg-orange text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition duration-300">
+                    REGISTER NOW
+                </a>
+            </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="bg-blue text-white rounded-lg shadow-lg p-6 hover-shadow-lg card-rounded transition duration-300 transform hover:-translate-y-1 card">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">Python Workshop</h2>
+                <p class="text-lg">September 28</p>
+                <p class="text-lg">Physical 20 Seats | Online 100 Seats</p>
+                <p class="text-lg mt-4">Trainer:</p>
+                <p class="text-lg">Kiran Mahato (6+ Years of HR Industry Experience)</p>
+                <p class="text-lg mt-4">Time:</p>
+                <p class="text-lg">5:00 pm – 7:00 pm</p>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="#" class="bg-orange text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition duration-300">
+                    REGISTER NOW
+                </a>
+            </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="bg-blue text-white rounded-lg shadow-lg p-6 hover-shadow-lg card-rounded transition duration-300 transform hover:-translate-y-1 card">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">Digital Marketing Hackathon</h2>
+                <p class="text-lg">August 12</p>
+                <p class="text-lg">Physical Event</p>
+                <p class="text-lg mt-4">Organizer:</p>
+                <p class="text-lg">Skill Spark, Shankhamul Kathmandu</p>
+                <p class="text-lg mt-4">Time:</p>
+                <p class="text-lg">5:00 pm – 7:00 pm</p>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="#" class="bg-orange text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition duration-300">
+                    REGISTER NOW
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

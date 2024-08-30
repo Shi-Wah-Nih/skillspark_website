@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Spark FAQs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .custom-button {
+            background-color: #0d4e84;
+            color: white;
+        }
+
+        .custom-button.active {
+            background-color: #e36000;
+        }
+
+        .faq-section {
+            display: none;
+        }
+
+        .faq-section.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-[#dfeafc] text-[#0d4e84] flex justify-center items-center h-screen">
+    <div class="w-3/4 max-w-2xl">
+        <h1 class="text-4xl font-bold text-center mb-8">FAQ</h1>
+        <div class="flex justify-center mb-6">
+            <input type="text" placeholder="Hi, How Can We Help You?" id="searchInput"
+                class="w-full px-4 py-2 border-2 border-[#0d4e84] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e36000]">
+            <button class="ml-2 px-4 py-2 bg-[#0d4e84] text-white rounded-lg hover:bg-[#e36000]" onclick="searchFAQ()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M12.9 14.32a8 8 0 111.415-1.415l4.241 4.242a1 1 0 01-1.415 1.415l-4.242-4.241zM8 14A6 6 0 108 2a6 6 0 000 12z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="flex justify-between mb-4">
+            <button class="custom-button w-1/3 py-3 rounded-lg mx-2" onclick="toggleFaqSection('what-is')">What is?</button>
+            <button class="custom-button w-1/3 py-3 rounded-lg mx-2" onclick="toggleFaqSection('how-to')">How to?</button>
+            <button class="custom-button w-1/3 py-3 rounded-lg mx-2" onclick="toggleFaqSection('do-i-need')">Do I need?</button>
+        </div>
+
+        <div id="faq-content" class="bg-white p-6 rounded-lg shadow-lg hidden">
+            <div id="what-is" class="faq-section">
+                <p><strong>What is Skill Spark?</strong></p>
+                <p>Skill Spark is an IT training institute in Nepal offering affordable, industry-relevant courses with certifications to help you excel in the IT industry.</p>
+                <p><strong>Where is Skill Spark located?</strong></p>
+                <p>Skill Spark is located at Shankhamul Tower, 6th Floor, Kathmandu, Nepal. Visit our website or contact us for more location details.</p>
+                <p><strong>What courses does Skill Spark offer?</strong></p>
+                <p>We provide a wide range of IT courses, including web development, software engineering, data science, cybersecurity, and more.</p>
+                <p><strong>What are the qualifications of Skill Spark instructors?</strong></p>
+                <p>Our instructors are industry professionals with extensive experience, ensuring practical and up-to-date training.</p>
+                <p><strong>What are the fees for Skill Spark courses?</strong></p>
+                <p>Course fees vary based on the course and mode of learning; detailed pricing is available on the course pages.</p>
+            </div>
+
+            <div id="how-to" class="faq-section">
+                <p><strong>How do I enroll in a course at Skill Spark?</strong></p>
+                <p>To enroll, visit the Course page, choose your preferred course and mode of learning (in-person or online), and follow the registration process.</p>
+                <p><strong>How long do the courses typically last?</strong></p>
+                <p>Courses usually range from a few weeks to several months, depending on the subject and intensity.</p>
+            </div>
+
+            <div id="do-i-need" class="faq-section">
+                <p><strong>Do I need prior IT knowledge to enroll in your courses?</strong></p>
+                <p>No prior IT knowledge is needed for many beginner-level courses; advanced courses may have prerequisites.</p>
+                <p><strong>Do you offer any financial assistance or scholarships?</strong></p>
+                <p>Yes, we offer financial assistance and scholarships to eligible students; check our website for application details.</p>
+                <p><strong>Does Skill Spark offer job placement assistance?</strong></p>
+                <p>Yes, we provide job placement support, including job listings, resume building, and interview preparation.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaqSection(section) {
+            document.querySelectorAll('.faq-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+
+            document.querySelectorAll('.custom-button').forEach(el => el.classList.remove('active'));
+            document.querySelector(`button[onclick="toggleFaqSection('${section}')"]`).classList.add('active');
+
+            document.getElementById('faq-content').classList.remove('hidden');
+        }
+
+        function searchFAQ() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const sections = document.querySelectorAll('.faq-section');
+            let found = false;
+
+            sections.forEach(section => {
+                section.classList.remove('active');
+                const textContent = section.textContent.toLowerCase();
+                if (textContent.includes(input)) {
+                    section.classList.add('active');
+                    found = true;
+                }
+            });
+
+            if (found) {
+                document.getElementById('faq-content').classList.remove('hidden');
+            } else {
+                document.getElementById('faq-content').classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>
